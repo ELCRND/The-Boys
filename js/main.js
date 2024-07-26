@@ -48,7 +48,7 @@ togglerBtns.forEach((toggleBtn) => {
   });
 });
 
-window.addEventListener("resize", (e) => {
+window.addEventListener("resize", () => {
   sliderRow.style.translate = `-${
     container.offsetWidth * currentCharacter
   }px 0`;
