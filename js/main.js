@@ -5,6 +5,7 @@ const container = document.querySelector(".about__container");
 const togglerBtns = document.querySelectorAll(".toggler__btn");
 const code = document.querySelector(".token__code");
 const tooltip = document.querySelector(".tooltip");
+const schedule = document.querySelector(".schedule__list");
 
 // открыть/закрыть меню
 menuBtn.addEventListener("click", () => {
@@ -51,4 +52,27 @@ window.addEventListener("resize", (e) => {
   sliderRow.style.translate = `-${
     container.offsetWidth * currentCharacter
   }px 0`;
+});
+
+// пролистывание в блоке Roadmap
+let step = 1;
+let offset = 0;
+const gap = +window.getComputedStyle(schedule).gap.replaceAll(/[a-z]/g, "");
+
+document.querySelector("#up").addEventListener("click", () => {
+  if (offset == 0) return;
+
+  offset -= schedule.firstElementChild.offsetHeight + gap;
+  schedule.style.translate = `0 -${offset}px`;
+
+  step -= 1;
+});
+
+document.querySelector("#down").addEventListener("click", () => {
+  if (step >= schedule.childElementCount) return;
+
+  offset += schedule.firstElementChild.offsetHeight + gap;
+  schedule.style.translate = `0 -${offset}px`;
+
+  step += 1;
 });
