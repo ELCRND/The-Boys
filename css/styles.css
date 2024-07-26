@@ -424,14 +424,14 @@ body {
 
 .characters__row {
   display: flex;
-  transition: all 800ms ease;
+  transition: translate 600ms ease;
 }
 .characters__row > div {
   min-width: 100%;
 }
 
 .characters__row.move {
-  animation: opacity 1200ms linear;
+  animation: opacity 1000ms linear;
 }
 
 .character {
@@ -472,7 +472,10 @@ body {
   translate: -50% 0;
   user-select: none;
 }
-.about__toggler button {
+.about__toggler > div {
+  position: relative;
+}
+.about__toggler > div button {
   width: 108px;
   height: 146px;
   border-radius: 30px;
@@ -481,19 +484,35 @@ body {
   position: relative;
   overflow: hidden;
 }
-.about__toggler button img {
+.about__toggler > div button img {
   position: absolute;
   bottom: 0;
   left: 50%;
   translate: -50% 0;
 }
-.about__toggler button.active {
+.about__toggler > div.active button {
   width: 125px;
   background-color: #fff;
-  transition: all 400ms ease;
+  transition: all 300ms ease;
 }
-.about__toggler button.active img {
+.about__toggler > div.active img {
   scale: 1.4;
+}
+.about__toggler > div.active .toggler__name {
+  opacity: 1;
+  transition: opacity 1500ms ease;
+}
+
+.toggler__name {
+  font-size: 42px;
+  line-height: 105%;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: -55px;
+  left: 0;
+  text-wrap: nowrap;
+  opacity: 0;
 }
 
 @keyframes opacity {

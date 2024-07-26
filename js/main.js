@@ -31,7 +31,7 @@ const container = document.querySelector(".about__container");
 
 let currentCharacter = 0;
 
-const togglerBtns = [...document.querySelector(".about__toggler").children];
+const togglerBtns = document.querySelectorAll(".toggler__btn");
 
 togglerBtns.forEach((toggleBtn) => {
   toggleBtn.addEventListener("click", (e) => {
@@ -39,8 +39,8 @@ togglerBtns.forEach((toggleBtn) => {
     if (value == currentCharacter) return;
     currentCharacter = value;
 
-    togglerBtns.forEach((btn) => btn.classList.remove("active"));
-    e.currentTarget.classList.add("active");
+    togglerBtns.forEach((btn) => btn.parentNode.classList.remove("active"));
+    e.currentTarget.parentNode.classList.add("active");
 
     sliderRow.classList.remove("move");
     sliderRow.style.translate = `-${container.offsetWidth * value}px 0`;

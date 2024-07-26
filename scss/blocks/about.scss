@@ -57,7 +57,7 @@
 
 .characters__row {
   display: flex;
-  transition: all 800ms ease;
+  transition: translate 600ms ease;
 
   & > div {
     min-width: 100%;
@@ -65,7 +65,7 @@
 }
 
 .characters__row.move {
-  animation: opacity 1200ms linear;
+  animation: opacity 1000ms linear;
 }
 
 .character {
@@ -106,31 +106,55 @@
   translate: -50% 0;
   user-select: none;
 
-  button {
-    width: 108px;
-    height: 146px;
-    border-radius: 30px;
-    backdrop-filter: blur(30px);
-    background: rgba(255, 255, 255, 0.1);
+  & > div {
     position: relative;
-    overflow: hidden;
 
-    img {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      translate: -50% 0;
+    button {
+      width: 108px;
+      height: 146px;
+      border-radius: 30px;
+      backdrop-filter: blur(30px);
+      background: rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        translate: -50% 0;
+      }
     }
   }
-  button.active {
-    width: 125px;
-    background-color: #fff;
-    transition: all 400ms ease;
+
+  & > div.active {
+    button {
+      width: 125px;
+      background-color: #fff;
+      transition: all 300ms ease;
+    }
 
     img {
       scale: 1.4;
     }
+
+    .toggler__name {
+      opacity: 1;
+      transition: opacity 1500ms ease;
+    }
   }
+}
+
+.toggler__name {
+  font-size: 42px;
+  line-height: 105%;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: -55px;
+  left: 0;
+  text-wrap: nowrap;
+  opacity: 0;
 }
 
 @keyframes opacity {
