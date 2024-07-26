@@ -1,14 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Jockey+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @font-face {
   font-family: "Merge One";
   src: url("../public/fonts/MergeOne-Regular.ttf");
 }
 
 :root {
-  --font-family: "Rubik", sans-serif;
-  --second-family: "Manrope", sans-serif;
-  --third-family: "Merge One", sans-serif;
+  --font-family: "Jockey One", sans-serif;
+  --second-family: "Roboto", sans-serif;
 }
 
 * {

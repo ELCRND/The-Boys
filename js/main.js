@@ -25,3 +25,25 @@ document.querySelectorAll(".menu__link").forEach((link) =>
 //   tooltip.classList.add("visible");
 //   setTimeout(() => tooltip.classList.remove("visible"), 600);
 // });
+
+const sliderRow = document.querySelector(".characters__row");
+const container = document.querySelector(".about__container");
+
+let currentCharacter = 0;
+
+const togglerBtns = [...document.querySelector(".about__toggler").children];
+
+togglerBtns.forEach((toggleBtn) => {
+  toggleBtn.addEventListener("click", (e) => {
+    const value = toggleBtn.getAttribute("data-value");
+    if (value == currentCharacter) return;
+    currentCharacter = value;
+
+    togglerBtns.forEach((btn) => btn.classList.remove("active"));
+    e.currentTarget.classList.add("active");
+
+    sliderRow.classList.remove("move");
+    sliderRow.style.translate = `-${container.offsetWidth * value}px 0`;
+    sliderRow.classList.add("move");
+  });
+});

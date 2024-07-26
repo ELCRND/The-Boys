@@ -1,5 +1,5 @@
 /* Reset and base styles  */
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jockey+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -129,9 +129,8 @@ legend {
   src: url("../public/fonts/MergeOne-Regular.ttf");
 }
 :root {
-  --font-family: "Rubik", sans-serif;
-  --second-family: "Manrope", sans-serif;
-  --third-family: "Merge One", sans-serif;
+  --font-family: "Jockey One", sans-serif;
+  --second-family: "Roboto", sans-serif;
 }
 
 * {
@@ -322,8 +321,6 @@ body {
 .home {
   min-height: 1090px;
   padding-bottom: 41px;
-  padding-left: 20px;
-  padding-right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -335,6 +332,179 @@ body {
 @media screen and (max-width: 1079px) {
   .home {
     min-height: 658px;
+    padding-bottom: 30px;
+  }
+}
+
+.home__wrap {
+  position: relative;
+}
+
+.home__socials {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  translate: -60% 0;
+  rotate: -3deg;
+}
+@media screen and (max-width: 1079px) {
+  .home__socials {
+    position: static;
+    translate: 0 0;
+    rotate: 0deg;
+    margin-top: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+}
+.home__socials a {
+  transition: filter 200ms ease;
+}
+.home__socials a:hover {
+  filter: brightness(0.8);
+}
+.home__socials a:active {
+  filter: brightness(1);
+}
+
+.about {
+  min-height: 954px;
+  padding-top: 84px;
+  background: #282828;
+  position: relative;
+  z-index: 1;
+}
+.about:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url("../public/img/common/bg_effect.png");
+  mix-blend-mode: soft-light;
+}
+.about::after {
+  content: "";
+  width: 100%;
+  height: 330px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(36, 36, 36, 0) 0%, #242424 100%);
+}
+
+.about__container {
+  width: min(1280px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.about__title {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  align-items: center;
+  font-size: 52px;
+  line-height: 105%;
+  text-transform: uppercase;
+  color: #fff;
+}
+.about__title span {
+  translate: -35% 30%;
+}
+
+.about__characters {
+  overflow: hidden;
+}
+
+.characters__row {
+  display: flex;
+  transition: all 800ms ease;
+}
+.characters__row > div {
+  min-width: 100%;
+}
+
+.characters__row.move {
+  animation: opacity 1200ms linear;
+}
+
+.character {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.character__img {
+  position: relative;
+  z-index: -2;
+  user-select: none;
+  pointer-events: none;
+}
+
+.character__text {
+  max-width: 478px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 40px;
+  line-height: 105%;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+.about__toggler {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  z-index: 2;
+  translate: -50% 0;
+  user-select: none;
+}
+.about__toggler button {
+  width: 108px;
+  height: 146px;
+  border-radius: 30px;
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.about__toggler button img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+}
+.about__toggler button.active {
+  width: 125px;
+  background-color: #fff;
+  transition: all 400ms ease;
+}
+.about__toggler button.active img {
+  scale: 1.4;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
