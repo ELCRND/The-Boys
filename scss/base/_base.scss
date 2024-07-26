@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+@font-face {
+  font-family: "Merge One";
+  src: url("../public/fonts/MergeOne-Regular.ttf");
+}
+
+:root {
+  --font-family: "Rubik", sans-serif;
+  --second-family: "Manrope", sans-serif;
+  --third-family: "Merge One", sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  color: #000;
+}
+
+.scroll-off {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.tooltip {
+  padding: 12px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 24px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  translate: -50% 0;
+  opacity: 0;
+  display: none;
+  transition: all 400ms ease;
+  z-index: 21;
+  font-family: var(--second-family);
+  color: #fff;
+}
+
+.tooltip.visible {
+  display: block;
+  animation: tooltip-show 400ms linear forwards;
+}
+
+@keyframes tooltip-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,142 @@
+.header {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  position: absolute;
+  top: 40px;
+  z-index: 10;
+
+  @media screen and (max-width: 1079px) {
+    top: 20px;
+    justify-content: space-between;
+  }
+}
+
+.header__navigation {
+  @media screen and (max-width: 1079px) {
+    display: none;
+  }
+
+  ol {
+    display: flex;
+    gap: 45px;
+
+    a {
+      font-family: var(--font-family);
+      font-size: 22px;
+      line-height: 105%;
+      text-transform: uppercase;
+      text-align: center;
+      color: #fff;
+      transition: color 200ms ease;
+
+      &:hover {
+        color: #fffac7;
+      }
+    }
+  }
+}
+
+.header__btn {
+  width: 120px;
+  height: 41px;
+  border-radius: 30px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 105%;
+  text-transform: uppercase;
+  color: #062649;
+  transition: filter 200ms ease;
+  position: relative;
+  z-index: 21;
+
+  &:hover {
+    filter: brightness(0.7);
+  }
+  &:active {
+    filter: brightness(1);
+  }
+}
+
+.header__menu {
+  width: 100%;
+  height: 100vh;
+  padding-top: 208px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -200vh;
+  left: 0;
+  z-index: 20;
+  backdrop-filter: blur(17px);
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  transition: all 500ms ease;
+  background-size: cover;
+  font-family: var(--second-family);
+  visibility: hidden;
+}
+
+.header__menu.visible {
+  top: -20px;
+  visibility: visible;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 105%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+
+.header__menu-btn {
+  display: none;
+  flex-direction: column;
+  align-items: end;
+  gap: 4px;
+  position: relative;
+  z-index: 21;
+
+  @media screen and (max-width: 1079px) {
+    display: flex;
+  }
+
+  div {
+    width: 24px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all 200ms ease;
+
+    &:nth-of-type(1) {
+      width: 16px;
+    }
+  }
+}
+
+.header__menu-btn.close {
+  div {
+    &:nth-of-type(1) {
+      width: 100%;
+      rotate: -45deg;
+      translate: 0 3px;
+    }
+    &:nth-of-type(2) {
+      translate: 0 -4px;
+      rotate: 45deg;
+    }
+  }
+}

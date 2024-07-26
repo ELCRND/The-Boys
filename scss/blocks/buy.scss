@@ -1,0 +1,121 @@
+.buy {
+  padding-top: 227px;
+  padding-bottom: 143px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #000;
+  position: relative;
+
+  @media screen and (max-width: 1079px) {
+    padding-top: 113px;
+    padding-bottom: 40px;
+  }
+}
+
+.buy__title {
+  margin-bottom: 64px;
+  font-weight: 900;
+  font-size: 47px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+
+  @media screen and (max-width: 1079px) {
+    margin-bottom: 57px;
+    font-size: 36px;
+  }
+}
+
+.buy__steps {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+
+  @media screen and (max-width: 1079px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      width: 29px;
+      height: 29px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #fff;
+      font-size: 21px;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    h3 {
+      margin-top: 10px;
+      margin-bottom: 40px;
+      font-size: 31px;
+      text-align: center;
+      color: #fff;
+
+      @media screen and (max-width: 1079px) {
+        margin-top: 18px;
+        margin-bottom: 15px;
+        font-size: 23px;
+      }
+    }
+
+    p {
+      max-width: 361px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 180%;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
+
+.buy__ticker {
+  width: 100%;
+  height: 80px;
+  background: #03111a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+  user-select: none;
+
+  .ticker__wrap {
+    display: flex;
+    align-items: center;
+    gap: 124px;
+    animation: tickerMove 20s linear infinite;
+    padding-right: 103px;
+    padding-left: 20px;
+
+    span {
+      font-family: var(--font-family);
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 100%;
+      color: #fff;
+
+      &:nth-of-type(2n) {
+        background: linear-gradient(92deg, #0cf3a8 0%, #d724fd 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: linearText 2s linear infinite;
+      }
+    }
+  }
+}
