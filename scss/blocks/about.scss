@@ -179,6 +179,9 @@
   translate: -50% 0;
 
   @media screen and (max-width: 1079px) {
+    height: 170px;
+    padding-left: 20px;
+    align-items: end;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-x: scroll;
@@ -275,6 +278,12 @@
   left: 0;
   text-wrap: nowrap;
   opacity: 0;
+
+  @media screen and (max-width: 1079px) {
+    font-size: 32px;
+    // left: 50%;
+    // translate: 0 0;
+  }
 }
 
 @keyframes opacity {
