@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Jockey+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@font-face {
-  font-family: "Merge One";
-  src: url("../public/fonts/MergeOne-Regular.ttf");
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --font-family: "Jockey One", sans-serif;
   --second-family: "Roboto", sans-serif;
+  --font3: "Montserrat", sans-serif;
 }
 
 * {
@@ -28,26 +26,39 @@ body {
 }
 
 .tooltip {
-  padding: 12px 24px;
+  width: 341px;
+  height: 50px;
+  border-radius: 30px;
+  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 1);
-  border-radius: 24px;
   position: fixed;
-  top: 10%;
+  top: 50px;
   left: 50%;
   translate: -50% 0;
   opacity: 0;
   display: none;
   transition: all 400ms ease;
   z-index: 21;
-  font-family: var(--second-family);
-  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #060606;
+
+  span {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    translate: -21px 0;
+  }
+
+  svg {
+    margin-left: 23px;
+  }
 }
 
 .tooltip.visible {
-  display: block;
+  display: flex;
   animation: tooltip-show 400ms linear forwards;
 }
 

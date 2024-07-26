@@ -1,7 +1,10 @@
 const menuBtn = document.querySelector(".header__menu-btn");
 const menu = document.querySelector(".header__menu");
-// const code = document.querySelector(".token__code");
-// const tooltip = document.querySelector(".tooltip");
+const sliderRow = document.querySelector(".characters__row");
+const container = document.querySelector(".about__container");
+const togglerBtns = document.querySelectorAll(".toggler__btn");
+const code = document.querySelector(".token__code");
+const tooltip = document.querySelector(".tooltip");
 
 // открыть/закрыть меню
 menuBtn.addEventListener("click", () => {
@@ -20,18 +23,14 @@ document.querySelectorAll(".menu__link").forEach((link) =>
 );
 
 // копирование кода в буфер обмена
-// document.querySelector(".token__copy").addEventListener("click", () => {
-//   navigator.clipboard.writeText(code.innerText);
-//   tooltip.classList.add("visible");
-//   setTimeout(() => tooltip.classList.remove("visible"), 600);
-// });
+document.querySelector(".token__copy").addEventListener("click", () => {
+  navigator.clipboard.writeText(code.innerText);
+  tooltip.classList.add("visible");
+  setTimeout(() => tooltip.classList.remove("visible"), 600);
+});
 
-const sliderRow = document.querySelector(".characters__row");
-const container = document.querySelector(".about__container");
-
+// переключение персонажей
 let currentCharacter = 0;
-
-const togglerBtns = document.querySelectorAll(".toggler__btn");
 
 togglerBtns.forEach((toggleBtn) => {
   toggleBtn.addEventListener("click", (e) => {
@@ -46,4 +45,10 @@ togglerBtns.forEach((toggleBtn) => {
     sliderRow.style.translate = `-${container.offsetWidth * value}px 0`;
     sliderRow.classList.add("move");
   });
+});
+
+window.addEventListener("resize", (e) => {
+  sliderRow.style.translate = `-${
+    container.offsetWidth * currentCharacter
+  }px 0`;
 });

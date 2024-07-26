@@ -177,10 +177,10 @@
   left: 50%;
   z-index: 2;
   translate: -50% 0;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 
   @media screen and (max-width: 1079px) {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     overflow-x: scroll;
     max-width: 375px;
     justify-content: start;
